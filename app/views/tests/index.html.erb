@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tests</h1>
+
+<div id="tests">
+  <% @tests.each do |test| %>
+    <%= link_to test.patient_name, user_test_path(id: test.id) %>
+    <p>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to 'Create new test', new_user_test_path %>

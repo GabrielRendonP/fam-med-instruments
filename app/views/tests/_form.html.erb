@@ -1,0 +1,79 @@
+<%= form_with(model: test, url: user_tests_path) do |form| %>
+  <% if test.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(test.errors.count, "error") %> prohibited this test from being saved:</h2>
+
+      <ul>
+        <% test.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :patient_name, style: "display: block" %>
+    <%= form.text_field :patient_name %>
+  </div>
+
+  <div>
+    <%= form.label :patient_sex, style: "display: block" %>
+    <%= form.text_field :patient_sex %>
+  </div>
+
+  <div>
+    <%= form.label :patient_age, style: "display: block" %>
+    <%= form.number_field :patient_age %>
+  </div>
+  <hr>
+  <h2> Questions </h2>
+  <div>
+    <p>  Me satisface la ayuda que recibo de mi
+familia cuando tengo algún problema y/o
+necesidad </p>
+    <%= form.number_field :question_1 %>
+  </div>
+
+  <div>
+    <p> Me satisface la participación que mi
+familia brinda y permite
+    </p>
+    <%= form.number_field :question_2 %>
+  </div>
+
+  <div>
+    <p>
+    Me satisface como mi familia acepta y
+apoya mis deseos de emprender nuevas
+actividades
+    </p>
+    <%= form.number_field :question_3 %>
+  </div>
+
+  <div>
+    <p>
+     Me satisface como mi familia expresa
+afectos y responde a mis emociones como
+rabia, tristeza, amor.
+    </p>
+    <%= form.text_field :question_4 %>
+  </div>
+
+  <div>
+    <p>
+ Me satisface como compartimos en mi
+ familia:
+<ul>
+  <li>a) el tiempo para estar juntos</li>
+  <li>b) los espacios en la casa</li>
+  <li>c) el dinero</li>
+</ul>
+    </p>
+ <%= form.text_field :question_5 %>
+
+  </div>
+  <br>
+  <hr>
+<%= form.submit %>
+
+<% end %>

@@ -1,0 +1,33 @@
+<div id="<%= dom_id test %>">
+  <p>
+    <strong>Patient name:</strong>
+    <%= test.patient_name %>
+  </p>
+
+  <p>
+    <strong>Patient sex:</strong>
+    <%= test.patient_sex %>
+  </p>
+
+  <p>
+    <strong>Patient age:</strong>
+    <%= test.patient_age %>
+  </p>
+
+  <p>
+    <strong>Questions:</strong>
+    <%= test.questions %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= test.user_id %>
+  </p>
+
+  <p>
+  Puntaje: <%= test.questions.sum %>
+  </p>
+  <p>
+  Funcion: <%= @fun %>
+
+</div>
